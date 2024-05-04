@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slider</title>
+    <style>
+        body{
+            background-color: #eaffcf;
+        }
+        .sldr{
+            display: flex;
+            justify-content: space-between;
+            border-radius: 5px;
+            border: 3px dashed #1d2505;
+            height: 500px;
+            align-items: center;
+            background-image: none;
+            margin: 25vw;
+            background-color: #00000092;
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 100%;
+        }
+        .prv,.nxt{
+            height: 50px;
+            width: 50px;
+            background-color: #00321f92;
+            background-size: 20px;
+            background-repeat: no-repeat;
+        }
+        .prv{
+            border-radius: 0 50px 10px 0;
+            background-position: 5px 18px;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+        }
+        .nxt{
+            border-radius: 50px 0 0 10px;
+            background-position: 25px 18px;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+        }
+        .prv:hover,.nxt:hover{
+            background-color: #014e3074;
+            background-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sldr">
+        <div class="prv" onclick="pr()"></div>
+        <div class="nxt" onclick="nx()"></div>
+    </div>
+    <script>
+        const sl = document.querySelector('.sldr')
+        let a = 1;
+        sl.style.backgroundImage = "url('https://i.pinimg.com/736x/56/c6/4c/56c64cc0cda904d3a5e7df070f04c5a3.jpg')";
+        function pr(){
+            if (a == 1){
+                a = 4;
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/5d/16/5a/5d165a444cbd9058ccfa95a361fa0ca6.jpg')";
+            }else if (a == 2){
+                a = 1;
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/56/c6/4c/56c64cc0cda904d3a5e7df070f04c5a3.jpg')";
+            }else if (a == 3){
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/2f/fc/67/2ffc679cc3ce7fbec2ab6dce274a4790.jpg')";
+                a = 2;
+            }else if (a == 4){
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/6e/6f/f6/6e6ff6214eccb3999827f39382f83712.jpg')";
+                a = 3;
+            }else{
+                alert("HOW?");                
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/56/c6/4c/56c64cc0cda904d3a5e7df070f04c5a3.jpg')";
+                a = 1;
+            }
+        }
+        function nx(){
+            if (a == 1){
+                a = 2;
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/2f/fc/67/2ffc679cc3ce7fbec2ab6dce274a4790.jpg')";
+            }else if (a == 2){
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/6e/6f/f6/6e6ff6214eccb3999827f39382f83712.jpg')";
+                a = 3;
+            }else if (a == 3){
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/5d/16/5a/5d165a444cbd9058ccfa95a361fa0ca6.jpg')";
+                a = 4;
+            }else if (a == 4){
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/56/c6/4c/56c64cc0cda904d3a5e7df070f04c5a3.jpg')";
+                a = 1;
+            }else{
+                alert("HOW?");                
+                sl.style.backgroundImage = "url('https://i.pinimg.com/736x/56/c6/4c/56c64cc0cda904d3a5e7df070f04c5a3.jpg')";
+                a = 1;
+            }
+        }
+    </script>
+</body>
+</html>
